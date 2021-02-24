@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@config/*":["config/*"],
+      "@controllers/*":["controllers/*"],
+      "@database/*":["database/*"],
+      "@container/*":["container/*"],
+      "@entities/*":["entities/*"],
+      "@errors/*":["errors/*"],
+      "@http/*":["http/*"],
+      "@repositories/*":["repositories/*"],
+      "@services/*":["services/*"]
+    }
+  },
+  "include": ["src/**/*.ts"]
+}
