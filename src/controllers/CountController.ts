@@ -10,7 +10,12 @@ export default class CountController {
       } = request.body;
 
       const data = {
-        user_id, type_id, value: (value * discounts), register_date, status: false,
+        user_id,
+        type_id,
+        value,
+        discount: (value * discounts),
+        register_date,
+        status: false,
       };
 
       const service = container.resolve(CreateCountService);
@@ -55,6 +60,7 @@ export default class CountController {
         user_id,
         type_id,
         value,
+        discount: 0.0,
         id,
         register_date,
       };

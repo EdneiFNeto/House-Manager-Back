@@ -8,8 +8,9 @@ function createMok(): ICountDto {
   return {
     user_id: '12345-1233',
     type_id: '342-123',
-    value: 12.00,
+    value: 100.0,
     status: false,
+    discount: 100.0 * 0.5,
     register_date: '2021-02-24',
   };
 }
@@ -48,7 +49,8 @@ describe('CreateCount', () => {
     const newMok = {
       user_id: '12345-1233',
       type_id: '342-123',
-      value: 12.00,
+      value: 100.0,
+      discount: 100.0 * 0.5,
       status: false,
       register_date: '2021-02-24',
     };

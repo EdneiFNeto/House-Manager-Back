@@ -7,6 +7,7 @@ interface IRequest {
   user_id: string;
   type_id: string;
   value: number;
+  discount: number;
   status: boolean;
   register_date: string;
 }
@@ -19,12 +20,13 @@ export default class CreateCountService {
   ) {}
 
   public async execute({
-    user_id, type_id, value, register_date,
+    user_id, type_id, value, register_date, discount,
   }: IRequest): Promise<Count> {
     const createCount = await this.iCountRepository.createCount({
       user_id,
       type_id,
       value,
+      discount,
       status: false,
       register_date: register_date || String(new Date()),
     });

@@ -13,6 +13,7 @@ export default class CountRepository implements ICountRepository {
       user_id: dto.user_id,
       type_id: dto.type_id,
       value: dto.value,
+      discount: dto.discount,
       register_date: dto.register_date,
     });
 
@@ -38,8 +39,8 @@ export default class CountRepository implements ICountRepository {
     });
   }
 
-  public async deleteCount(dto: ICountDto): Promise<void> {
-    const item = this.counts.map((count) => count.id === dto.id);
+  public async deleteCount(id: string): Promise<void> {
+    const item = this.counts.map((count) => count.id === id);
     const index = item.indexOf(item[0]);
     this.counts.splice(index, -1);
   }
