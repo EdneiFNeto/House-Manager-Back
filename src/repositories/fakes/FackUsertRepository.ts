@@ -23,4 +23,8 @@ export default class UserRepository implements IUserRepository {
   public async all(): Promise<Array<User>> {
     return this.users;
   }
+
+  public async show(id:string): Promise<User> {
+    return this.users.filter((user) => user.id === id)[0];
+  }
 }

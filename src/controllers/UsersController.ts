@@ -22,4 +22,15 @@ export default class UserController {
       return response.status(500).json({ error: `${error.message}` });
     }
   }
+
+  public async show(request: Request, response: Response): Promise<Response> {
+    try {
+      const { id } = request.params;
+      const service = container.resolve(CreateUserService);
+      const user = await service.show(id);
+      return response.status(200).json(user);
+    } catch (error) {
+      return response.status(500).json({ error: `${error.message}` });
+    }
+  }
 }

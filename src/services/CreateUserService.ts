@@ -30,4 +30,9 @@ export default class CreateUserService {
     const users = await this.iUserRepository.all();
     return users;
   }
+
+  public async show(id: string): Promise<User> {
+    const users = await this.iUserRepository.show(id);
+    return users;
+  }
 }

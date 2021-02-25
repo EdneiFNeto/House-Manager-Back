@@ -8,9 +8,6 @@ export default class CountController {
       const {
         user_id, type_id, value, register_date, discount,
       } = request.body;
-
-      console.log('\n\nBody', request.body);
-
       const data = {
         user_id,
         type_id,
