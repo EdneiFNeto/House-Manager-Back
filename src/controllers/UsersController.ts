@@ -7,6 +7,9 @@ export default class UserController {
     try {
       const service = container.resolve(CreateUserService);
       const user = await service.execute(request.body);
+
+      delete user.password;
+
       return response.status(201).json(user);
     } catch (error) {
       return response.status(500).json({ error: `${error.message}` });

@@ -2,6 +2,7 @@ import User from '@entities/User';
 import AppError from '@errors/AppError';
 import { inject, injectable } from 'tsyringe';
 import { IUserRepository } from '@repositories/interfaces/IUsersRepository';
+import { hash } from 'bcryptjs';
 
 interface IRequest {
   name,
@@ -22,7 +23,12 @@ export default class CreateUserService {
       throw new AppError('Email is exists');
     }
 
-    const createUser = await this.iUserRepository.createUser({ name, email, password });
+    const hashPassword = await hash(password, 8);
+    const createUser = await this.iUserRepository.createUser({
+      name,
+      email,
+      password: hashPassword,
+    });
     return createUser;
   }
 
