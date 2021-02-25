@@ -5,7 +5,6 @@ export default class CreateColumnDiscount1614250918082 implements MigrationInter
     await queryRunner.addColumn('counts', new TableColumn({
       name: 'discount',
       type: 'decimal(10,2)',
-      default: 0.0,
     }));
   }
 

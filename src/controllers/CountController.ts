@@ -6,14 +6,16 @@ export default class CountController {
   public async create(request: Request, response: Response): Promise<Response> {
     try {
       const {
-        user_id, type_id, value, register_date, discounts,
+        user_id, type_id, value, register_date, discount,
       } = request.body;
+
+      console.log('\n\nBody', request.body);
 
       const data = {
         user_id,
         type_id,
         value,
-        discount: (value * discounts),
+        discount: (value * discount),
         register_date,
         status: false,
       };

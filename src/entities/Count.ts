@@ -27,6 +27,9 @@ export default class Count {
   value: number;
 
   @Column()
+  discount: number;
+
+  @Column()
   status: boolean;
 
   @Column()
