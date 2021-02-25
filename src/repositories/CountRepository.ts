@@ -35,7 +35,9 @@ export default class CountRepository implements ICountRepository {
 
   public async show(id: string): Promise<Count[]> {
     const counts = await this.ormRepository.find({
-      where: { user_id: id }, relations: ['user'],
+      where: { user_id: id },
+      relations: ['user'],
+      order: { created_at: 'ASC' },
     });
     return counts;
   }

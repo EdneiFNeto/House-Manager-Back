@@ -12,7 +12,7 @@ export default class CountController {
         user_id,
         type_id,
         value,
-        discount: (value * discount),
+        discount,
         register_date,
         status: false,
       };
