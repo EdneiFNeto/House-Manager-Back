@@ -36,4 +36,19 @@ export default class UserController {
       return response.status(500).json({ error: `${error.message}` });
     }
   }
+
+  public async update(request: Request, response: Response): Promise<Response> {
+    try {
+      const { id } = request.params;
+      const { email, name, password } = request.body;
+      const data = {
+        email, name, password, id,
+      };
+      const service = container.resolve(CreateUserService);
+      await service.update(data);
+      return response.status(204).json();
+    } catch (error) {
+      return response.status(500).json({ error: `${error.message}` });
+    }
+  }
 }

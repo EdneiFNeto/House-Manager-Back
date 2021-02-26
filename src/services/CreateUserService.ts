@@ -5,9 +5,10 @@ import { IUserRepository } from '@repositories/interfaces/IUsersRepository';
 import { hash } from 'bcryptjs';
 
 interface IRequest {
-  name,
-  email,
-  password
+  id?:string;
+  name:string;
+  email:string;
+  password:string;
 }
 
 @injectable()
@@ -40,5 +41,20 @@ export default class CreateUserService {
   public async show(id: string): Promise<User> {
     const users = await this.iUserRepository.show(id);
     return users;
+  }
+
+  public async update({
+    email, name, password, id,
+  }: IRequest): Promise<void> {
+    const checkEmail = await this.iUserRepository.findBtEmail(email);
+    if (!checkEmail) {
+      throw new AppError('Not exists e-mail!');
+    }
+
+    const hashPassword = await hash(password, 8);
+
+    await this.iUserRepository.update({
+      email, name, password: hashPassword, id,
+    });
   }
 }

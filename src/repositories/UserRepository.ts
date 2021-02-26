@@ -1,5 +1,6 @@
 import { getRepository, Repository } from 'typeorm';
 import User from '@entities/User';
+import { IUserDto } from './dto/IUserDTO';
 import { IUserRepository } from './interfaces/IUsersRepository';
 
 export default class UserRepository implements IUserRepository {
@@ -29,5 +30,10 @@ export default class UserRepository implements IUserRepository {
   public async show(id: string): Promise<User> {
     const users = await this.ormRepository.findOne({ where: { id } });
     return users;
+  }
+
+  public async update(dto: IUserDto): Promise<void> {
+    const { id } = dto;
+    await this.ormRepository.update(id, dto);
   }
 }
