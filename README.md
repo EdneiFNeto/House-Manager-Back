@@ -6,6 +6,8 @@ Api desenvolvida em nodo com auxilio de Typescript. Nesta API foi desenvolvida
 para auxiliar em no desenvolvimento de sistema
 [House-Manager-front](https://github.com/EdneiFNeto/House-Manager-front).
 
+### ORM
+Toda a parte de integração com banco de dados,onde são feita as consultas, configurações foi instalado a lib [typeorm](https://typeorm.io/#/)
 ### Bibliotecas utilizadas
 - [bcryptjs](https://www.npmjs.com/package/bcryptjs)
 - [date-fns](https://date-fns.org/docs/Getting-Started)
