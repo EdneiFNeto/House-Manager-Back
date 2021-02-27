@@ -4,7 +4,7 @@
 # Introdução
 Api desenvolvida em nodo com auxilio de Typescript. Nesta API foi desenvolvida
 para auxiliar em no desenvolvimento de sistema
-[House-Manager](https://github.com/EdneiFNeto/House-Manager-front).
+[House-Manager-front](https://github.com/EdneiFNeto/House-Manager-front).
 
 ### Bibliotecas utilizadas
 - [bcryptjs](https://www.npmjs.com/package/bcryptjs)
