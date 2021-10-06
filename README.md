@@ -28,6 +28,12 @@ Banco de dados utilizados foi MYSQL, foi necessário a instalação da
 Toda a criação dos teste foi utilizada uma lib chamada [jest](https://jestjs.io/docs/en/getting-started) para auxiliar
 no desenvolvimento.
 
+## Run database
+yarn typeorm migration:run
+
+## Run server
+yarn dev:server
+
 
 
 
